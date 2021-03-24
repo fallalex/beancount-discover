@@ -1,0 +1,22 @@
+# Default to deny all under root
+/*
+
+# Allowlist 
+!/.gitignore
+!/src/
+!/bin/
+!/tests/
+!/docs/
+!/README.md
+!/LICENSE
+!/requirements.txt
+!/setup.py
+!/_*-completion
+
+# Explicit deny for contents of allowed sub-directories
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+*.json
+
