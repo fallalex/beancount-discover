@@ -12,6 +12,8 @@ import time
 import requests
 import sys
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -32,7 +34,9 @@ class discover_client():
     def __init__(self, gmail):
         self.gmail = gmail
         # self.driver = webdriver.Firefox(executable_path='./geckodriver')
-        self.driver = webdriver.Chrome(executable_path='./chromedriver')
+        # self.driver = webdriver.Chrome(executable_path='./chromedriver')
+        # self.driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+        self.driver = webdriver.Chrome(ChromeDriverManager().install())
         self.wait = WebDriverWait(self.driver, 10)
         self.login_url = 'https://www.discover.com'
         self.code_request_url = 'https://card.discover.com/cardmembersvcs/strongauth/app/sa_main'
